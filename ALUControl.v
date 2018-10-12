@@ -41,11 +41,11 @@ module ALUControl(ALUOp, instruction, ALUOp2);
             end
             //Not or
             6'b100111: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b01101;
             end
             //exclusive or
             6'b100110: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b01111;
             end
             //or immediate
             6'b001101: begin
@@ -53,19 +53,19 @@ module ALUControl(ALUOp, instruction, ALUOp2);
             end
             //exclusive or immediate
             6'b001110: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b00111;
             end
             //sign-extend halfword
             6'b100000: begin
-                ALUOp2 = 5'b;
+                ALUOp2 = 5'b01111;
             end
             //shift left
             6'b000000: begin
-                ALUOp2 = 5'b01000;
+                ALUOp2 = 5'b00100;
             end
             //shift right
             6'b000010: begin
-                ALUOp2 = 5'b01001;
+                ALUOp2 = 5'b00101;
             end
             //Shift Word Left Logical Variable
             6'b000100: begin
@@ -85,39 +85,39 @@ module ALUControl(ALUOp, instruction, ALUOp2);
             end
             //move conditional on not zero
             6'b001011: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b10000;
             end
             //move conditional on zero
             6'b001010: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b10001;
             end
             //Rotate Word Right Variable
             6'b000110: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b10010;
             end
             //Rotate word right
             6'b000010: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b10010;
             end
             //Shift word right arithmetic
             6'b000011: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b10011;
             end
             //Shift Word Right Arithmetic Variable
             6'b000111: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b10011;
             end
             //Sign-Extend Byte
             6'b100000: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b10100;
             end
             //Set on Less Than Immediate Unsigned
             6'b001011: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b10101;
             end
             //Set on Less Than Unsigned 
             6'b101011: begin
-                ALUOp2 = ;
+                ALUOp2 = 5'b10110;
             end
         endcase
     end
