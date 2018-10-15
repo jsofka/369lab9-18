@@ -37,23 +37,23 @@ module ALUControl(ALUOp, instruction, ALUOp2);
             end
             //or
             6'b100101: begin
-                ALUOp2 = 5'b00110;
+                ALUOp2 = 5'b00100;
             end
             //Not or
             6'b100111: begin
-                ALUOp2 = 5'b01101;
+                ALUOp2 = 5'b01110;
             end
             //exclusive or
             6'b100110: begin
-                ALUOp2 = 5'b01111;
+                ALUOp2 = 5'b01101;
             end
             //or immediate
             6'b001101: begin
-                ALUOp2 = 5'b00110;
+                ALUOp2 = 5'b00100;
             end
             //exclusive or immediate
             6'b001110: begin
-                ALUOp2 = 5'b00111;
+                ALUOp2 = 5'b01101;
             end
             //sign-extend halfword
             6'b100000: begin
@@ -61,11 +61,11 @@ module ALUControl(ALUOp, instruction, ALUOp2);
             end
             //shift left
             6'b000000: begin
-                ALUOp2 = 5'b00100;
+                ALUOp2 = 5'b01000;
             end
             //shift right
             6'b000010: begin
-                ALUOp2 = 5'b00101;
+                ALUOp2 = 5'b01001;
             end
             //Shift Word Left Logical Variable
             6'b000100: begin
@@ -89,15 +89,15 @@ module ALUControl(ALUOp, instruction, ALUOp2);
             end
             //move conditional on zero
             6'b001010: begin
-                ALUOp2 = 5'b10001;
+                ALUOp2 = 5'b10010;
             end
             //Rotate Word Right Variable
             6'b000110: begin
-                ALUOp2 = 5'b10010;
+                ALUOp2 = 5'b10001;
             end
             //Rotate word right
             6'b000010: begin
-                ALUOp2 = 5'b10010;
+                ALUOp2 = 5'b10001;
             end
             //Shift word right arithmetic
             6'b000011: begin
@@ -109,18 +109,30 @@ module ALUControl(ALUOp, instruction, ALUOp2);
             end
             //Sign-Extend Byte
             6'b100000: begin
-                ALUOp2 = 5'b10100;
+                ALUOp2 = 5'b10011;
             end
             //Set on Less Than Immediate Unsigned
             6'b001011: begin
-                ALUOp2 = 5'b10101;
+                ALUOp2 = 5'b00101;
             end
             //Set on Less Than Unsigned 
             6'b101011: begin
-                ALUOp2 = 5'b10110;
+                ALUOp2 = 5'b00101;
             end
             // add
             6'b100000: begin
+                ALUOp2 = 5'b00000;
+            end
+            //addiu
+            6'b001001: begin
+                ALUOp2 = 5'b00000;
+            end
+            //addu
+            6'b100001: begin
+                ALUOp2 = 5'b00000;
+            end
+            //addi
+            6'b001000: begin
                 ALUOp2 = 5'b00000;
             end
             // sub
@@ -130,6 +142,34 @@ module ALUControl(ALUOp, instruction, ALUOp2);
             // mul
             6'b000010: begin
                 ALUOp2 = 5'b00010;
+            end
+            // mult
+            6'b011000: begin
+                ALUOp2 = 5'b00010;
+            end
+            //multu
+            6'b011001: begin
+                ALUOp2 = 5'b00010;
+            end
+            // madd
+            6'b011100: begin
+                ALUOp2 = 5'b01011;
+            end
+            // msub
+            6'b000100: begin
+                ALUOp2 = 5'b01100;
+            end
+            6'b010001: begin
+                ALUOp2 = 5'b10010;
+            end
+            6'b010011: begin
+                ALUOp2 = 5'b10011;
+            end
+            6'b010000: begin
+                ALUOp2 = 5'b10100;
+            end
+            6'b010010: begin
+                ALUOp2 = 5'b10101;
             end
         endcase
     end
