@@ -119,6 +119,18 @@ module ALUControl(ALUOp, instruction, ALUOp2);
             6'b101011: begin
                 ALUOp2 = 5'b10110;
             end
+            // add
+            6'b100000: begin
+                ALUOp2 = 5'b00000;
+            end
+            // sub
+            6'b100010: begin
+                ALUOp2 = 5'b00001;
+            end
+            // mul
+            6'b000010: begin
+                ALUOp2 = 5'b00010;
+            end
         endcase
     end
     
